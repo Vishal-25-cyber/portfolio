@@ -1,5 +1,5 @@
 .experience {
-  background: var(--dark-bg);
+  background: transparent;
 }
 
 .subsection {
@@ -36,10 +36,11 @@
 }
 
 .certificate-card {
-  background: var(--dark-card);
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(10px);
   border-radius: 15px;
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.2);
   transition: var(--transition);
 }
 
@@ -173,10 +174,11 @@
 }
 
 .event-card {
-  background: var(--dark-card);
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(10px);
   border-radius: 15px;
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.2);
   transition: var(--transition);
 }
 
@@ -355,10 +357,11 @@
 }
 
 .timeline-content {
-  background: var(--dark-card);
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(10px);
   padding: 25px;
   border-radius: 15px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.2);
   transition: var(--transition);
   position: relative;
   z-index: 1;

@@ -23,7 +23,7 @@ const Hero = () => {
   return (
     <section id="home" className="hero">
       <div className="hero-content container">
-        <motion.div 
+        <motion.div
           className="hero-text"
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
@@ -51,13 +51,13 @@ const Hero = () => {
             Let's build something amazing together!
           </p>
           <div className="hero-buttons">
-            <button 
+            <button
               className="btn btn-primary"
               onClick={() => scrollToSection('projects')}
             >
               View Projects
             </button>
-            <button 
+            <button
               className="btn btn-secondary"
               onClick={() => scrollToSection('contact')}
             >
@@ -81,7 +81,7 @@ const Hero = () => {
           </div>
         </motion.div>
 
-        <motion.div 
+        <motion.div
           className="hero-image"
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
@@ -89,9 +89,9 @@ const Hero = () => {
         >
           <div className="profile-img-container">
             <div className="profile-img-bg"></div>
-            <img 
-              src="/images/profile.jpg" 
-              alt="Vishal K - Full Stack Developer" 
+            <img
+              src="/images/profile.png"
+              alt="Vishal K - Full Stack Developer"
               className="profile-img"
             />
           </div>
@@ -99,7 +99,7 @@ const Hero = () => {
       </div>
 
       <div className="scroll-down">
-        <a 
+        <a
           href="#about"
           onClick={(e) => {
             e.preventDefault();

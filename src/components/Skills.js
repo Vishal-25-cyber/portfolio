@@ -1,9 +1,9 @@
 import React from 'react';
-import { 
+import {
   FaReact, FaNodeJs, FaPython, FaJava, FaGithub,
   FaHtml5, FaJs
 } from 'react-icons/fa';
-import { 
+import {
   SiExpress, SiMongodb, SiVisualstudiocode, SiC, SiPostman
 } from 'react-icons/si';
 import { motion } from 'framer-motion';
@@ -26,7 +26,7 @@ const Skills = () => {
     {
       name: 'Express.js',
       icon: <SiExpress />,
-      color: '#000000',
+      color: '#FFFFFF',
       level: 'Intermediate'
     },
     {
@@ -68,7 +68,7 @@ const Skills = () => {
     {
       name: 'GitHub',
       icon: <FaGithub />,
-      color: '#181717',
+      color: '#FFFFFF',
       level: 'Advanced'
     },
     {
@@ -112,8 +112,8 @@ const Skills = () => {
       <div className="container">
         <h2 className="section-title">Skills & Technologies</h2>
         <div className="section-subtitle">Technologies I work with</div>
-        
-        <motion.div 
+
+        <motion.div
           className="skills-grid"
           variants={containerVariants}
           initial="hidden"
@@ -125,7 +125,7 @@ const Skills = () => {
               key={index}
               className="skill-card"
               variants={itemVariants}
-              whileHover={{ 
+              whileHover={{
                 y: -10,
                 scale: 1.05,
                 transition: { type: 'spring', stiffness: 300 }

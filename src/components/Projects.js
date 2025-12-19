@@ -36,66 +36,6 @@ const Projects = () => {
       category: 'ml',
       demoUrl: null,
       githubUrl: 'https://github.com/Vishal-25-cyber/Bank_fraud_detection'
-    },
-    {
-      id: 4,
-      title: 'AI Chatbot Interface',
-      description: 'Modern chatbot UI with conversational AI capabilities for seamless user interactions.',
-      image: 'https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=600&h=400&fit=crop',
-      tags: ['JavaScript', 'AI', 'UI/UX'],
-      category: 'web',
-      demoUrl: null,
-      githubUrl: 'https://github.com/Vishal-25-cyber/chatbot-ui'
-    },
-    {
-      id: 5,
-      title: 'Event Management System',
-      description: 'Complete event management platform for organizing and managing events with user-friendly interface and comprehensive features.',
-      image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&h=400&fit=crop',
-      tags: ['HTML', 'CSS', 'JavaScript'],
-      category: 'web',
-      demoUrl: null,
-      githubUrl: 'https://github.com/Vishal-25-cyber/Event_Management_System'
-    },
-    {
-      id: 6,
-      title: 'House Price Prediction API',
-      description: 'RESTful API for house price prediction using machine learning algorithms, built with Python and Flask.',
-      image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&h=400&fit=crop',
-      tags: ['Python', 'API', 'ML'],
-      category: 'ml',
-      demoUrl: null,
-      githubUrl: 'https://github.com/Vishal-25-cyber/house-price-api'
-    },
-    {
-      id: 7,
-      title: 'JWT Authentication System',
-      description: 'Secure authentication system implementing JWT tokens for user authorization and session management.',
-      image: 'https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=600&h=400&fit=crop',
-      tags: ['Authentication', 'Security', 'CSS'],
-      category: 'fullstack',
-      demoUrl: null,
-      githubUrl: 'https://github.com/Vishal-25-cyber/JWT'
-    },
-    {
-      id: 8,
-      title: 'Password Manager',
-      description: 'Secure password management application with encryption for storing and managing user credentials safely.',
-      image: 'https://images.unsplash.com/photo-1633265486064-086b219458ec?w=600&h=400&fit=crop',
-      tags: ['JavaScript', 'Security', 'Encryption'],
-      category: 'web',
-      demoUrl: null,
-      githubUrl: 'https://github.com/Vishal-25-cyber/Password_Manager'
-    },
-    {
-      id: 9,
-      title: 'E-Voting System',
-      description: 'Digital voting platform ensuring secure and transparent electoral processes with blockchain-like security features.',
-      image: 'https://images.unsplash.com/photo-1577962917302-cd874c4e31d2?w=600&h=400&fit=crop',
-      tags: ['Web App', 'Security', 'Democracy'],
-      category: 'web',
-      demoUrl: null,
-      githubUrl: 'https://github.com/Vishal-25-cyber/E-voting'
     }
   ];
 

@@ -1,21 +1,22 @@
 .App {
   min-height: 100vh;
   position: relative;
+  z-index: 1;
 }
 
 :root {
-  --primary-color: #00d9ff;
-  --primary-dark: #00b8d4;
-  --primary-light: #4de8ff;
-  --secondary-color: #ff6b35;
-  --accent-color: #7c3aed;
-  --dark-bg: rgba(10, 14, 39, 0.95);
-  --dark-card: rgba(26, 26, 62, 0.8);
+  --primary-color: #3b82f6;
+  --primary-dark: #2563eb;
+  --primary-light: #60a5fa;
+  --secondary-color: #8b5cf6;
+  --accent-color: #06b6d4;
+  --dark-bg: rgba(0, 0, 0, 0.9);
+  --dark-card: rgba(15, 23, 42, 0.85);
   --text-primary: #ffffff;
-  --text-secondary: #e0e7ff;
+  --text-secondary: #e2e8f0;
   --text-muted: #94a3b8;
-  --gradient-primary: linear-gradient(135deg, #00d9ff 0%, #7c3aed 100%);
-  --gradient-secondary: linear-gradient(135deg, #ff6b35 0%, #00d9ff 100%);
+  --gradient-primary: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+  --gradient-secondary: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
   --section-padding: 100px 0;
   --container-width: 1200px;
   --transition: all 0.3s ease;

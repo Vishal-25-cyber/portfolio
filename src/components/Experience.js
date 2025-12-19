@@ -54,30 +54,6 @@ const Experience = () => {
       date: 'January 15, 2025',
       image: '/images/codeup-certificate.jpg',
       description: 'Certificate of Participation in CODEUP\'25 coding competition organized by CSE Department.'
-    },
-    {
-      id: 4,
-      title: 'ASTRANOVA 2K25 - Project Expo',
-      venue: 'Coimbatore Institute of Technology',
-      date: 'March 1, 2025',
-      image: '/images/astranova-certificate.jpg',
-      description: 'Participated in national-level technical symposium with Smart CO Detection and Monitoring System project.'
-    },
-    {
-      id: 5,
-      title: 'CYBERTALK\'24 - Marketing Event',
-      venue: 'Sona College of Technology',
-      date: 'September 26, 2024',
-      image: '/images/cybertalk-certificate.jpg',
-      description: 'Participated in Marketing event at CYBERTALK\'24 national level technical symposium.'
-    },
-    {
-      id: 6,
-      title: 'GoFr Summer of Code',
-      venue: 'Open Source Contribution',
-      date: '2024',
-      image: '/images/gofr-certificate.jpg',
-      description: 'Contributed to GoFr framework during Summer of Code program.'
     }
   ];
 
@@ -113,7 +89,7 @@ const Experience = () => {
       <div className="container">
         <h2 className="section-title">Certifications & Education</h2>
         <div className="section-subtitle">Professional achievements and learning journey</div>
-        
+
         {/* Professional Certifications */}
         <div className="subsection">
           <h3 className="subsection-title">Professional Certifications</h3>

@@ -1,5 +1,5 @@
 .about {
-  background: var(--dark-card);
+  background: transparent;
 }
 
 .about-content {
@@ -13,17 +13,27 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  perspective: 1000px;
 }
 
 .about-image img {
-  width: 70%;
-  max-width: 350px;
-  height: auto;
-  border-radius: 50%;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  width: 350px;
+  height: 350px;
   object-fit: cover;
-  aspect-ratio: 1/1;
-  border: 5px solid var(--primary-color);
+  object-position: center 20%;
+  border-radius: 50%;
+  box-shadow:
+    0 10px 30px rgba(59, 130, 246, 0.3),
+    0 20px 60px rgba(59, 130, 246, 0.2),
+    0 30px 90px rgba(0, 0, 0, 0.4),
+    inset 0 0 50px rgba(255, 255, 255, 0.1);
+  border: 6px solid var(--primary-color);
+  transform: translateZ(50px);
+  transition: transform 0.3s ease;
+}
+
+.about-image img:hover {
+  transform: translateZ(80px) scale(1.05);
 }
 
 .about-text h3 {
@@ -52,9 +62,10 @@
   gap: 15px;
   align-items: flex-start;
   padding: 15px;
-  background: var(--dark-bg);
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(10px);
   border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.2);
   transition: var(--transition);
 }
 

@@ -1,5 +1,5 @@
 .projects {
-  background: var(--dark-card);
+  background: transparent;
 }
 
 .project-filters {
@@ -12,9 +12,10 @@
 
 .filter-btn {
   padding: 10px 25px;
-  background: var(--dark-bg);
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(10px);
   color: var(--text-secondary);
-  border: 2px solid rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(59, 130, 246, 0.3);
   border-radius: 50px;
   cursor: pointer;
   font-weight: 600;
@@ -26,6 +27,8 @@
   background: var(--gradient-primary);
   color: white;
   border-color: transparent;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(59, 130, 246, 0.4);
 }
 
 .projects-grid {
@@ -35,15 +38,18 @@
 }
 
 .project-card {
-  background: var(--dark-bg);
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(10px);
   border-radius: 20px;
   overflow: hidden;
   transition: var(--transition);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.2);
 }
 
 .project-card:hover {
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(59, 130, 246, 0.3);
+  border-color: rgba(59, 130, 246, 0.5);
 }
 
 .project-image {
