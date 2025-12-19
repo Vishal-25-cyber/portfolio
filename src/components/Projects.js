@@ -40,11 +40,11 @@ const Projects = () => {
     {
       id: 4,
       title: 'AI Chatbot Interface',
-      description: 'Modern chatbot UI with conversational AI capabilities, deployed on Vercel for seamless user interactions.',
+      description: 'Modern chatbot UI with conversational AI capabilities for seamless user interactions.',
       image: 'https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=600&h=400&fit=crop',
       tags: ['JavaScript', 'AI', 'UI/UX'],
       category: 'web',
-      demoUrl: 'https://chatbot-ui-brown-xi.vercel.app',
+      demoUrl: null,
       githubUrl: 'https://github.com/Vishal-25-cyber/chatbot-ui'
     },
     {
@@ -106,8 +106,8 @@ const Projects = () => {
     { name: 'Machine Learning', value: 'ml' }
   ];
 
-  const filteredProjects = activeFilter === 'all' 
-    ? projects 
+  const filteredProjects = activeFilter === 'all'
+    ? projects
     : projects.filter(project => project.category === activeFilter);
 
   return (
@@ -115,7 +115,7 @@ const Projects = () => {
       <div className="container">
         <h2 className="section-title">My Projects</h2>
         <div className="section-subtitle">Recent works and achievements</div>
-        
+
         <div className="project-filters">
           {filters.map((filter) => (
             <button

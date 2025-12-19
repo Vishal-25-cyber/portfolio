@@ -38,7 +38,7 @@ const Contact = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch('/api/contact', {
+      const response = await fetch('http://localhost:5000/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -51,22 +51,23 @@ const Contact = () => {
       if (response.ok) {
         setFormStatus({
           type: 'success',
-          message: 'Thank you for your message! I will get back to you soon.'
+          message: `Thank you ${formData.name}! Your message has been sent successfully. I'll get back to you soon!`
         });
         setFormData({ name: '', email: '', subject: '', message: '' });
       } else {
         throw new Error(data.message || 'Failed to send message');
       }
     } catch (error) {
+      console.error('Contact form error:', error);
       setFormStatus({
         type: 'error',
-        message: 'Oops! Something went wrong. Please try again later or email me directly at vishal250820@gmail.com'
+        message: 'Unable to connect to server. Please ensure the backend is running on port 5000.'
       });
     }
 
     setTimeout(() => {
       setFormStatus({ type: '', message: '' });
-    }, 5000);
+    }, 8000);
   };
 
   return (
@@ -74,9 +75,9 @@ const Contact = () => {
       <div className="container">
         <h2 className="section-title">Get In Touch</h2>
         <div className="section-subtitle">Let's work together</div>
-        
+
         <div className="contact-content">
-          <motion.div 
+          <motion.div
             className="contact-info"
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -85,10 +86,10 @@ const Contact = () => {
           >
             <h3>Let's talk about everything!</h3>
             <p>
-              Have a project in mind or just want to say hi? Feel free to reach out. 
+              Have a project in mind or just want to say hi? Feel free to reach out.
               I'm always open to discussing new projects, creative ideas, or opportunities.
             </p>
-            
+
             <div className="contact-details">
               {contactDetails.map((detail, index) => (
                 <motion.div
@@ -122,7 +123,7 @@ const Contact = () => {
             </div>
           </motion.div>
 
-          <motion.form 
+          <motion.form
             className="contact-form"
             onSubmit={handleSubmit}
             initial={{ opacity: 0, x: 50 }}
