@@ -90,7 +90,7 @@ const Hero = () => {
           <div className="profile-img-container">
             <div className="profile-img-bg"></div>
             <img
-              src="/images/profile.png"
+              src="/images/profile.jpg"
               alt="Vishal K - Full Stack Developer"
               className="profile-img"
             />

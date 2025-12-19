@@ -25,7 +25,7 @@ const About = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <img src="/images/profile.png" alt="Vishal K" />
+            <img src="/images/profile.jpg" alt="Vishal K" />
           </motion.div>
 
           <motion.div
