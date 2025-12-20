@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaGithub, FaLinkedin, FaInstagram, FaPaperPlane } from 'react-icons/fa';
 import { SiLeetcode } from 'react-icons/si';
 import { motion } from 'framer-motion';
+import emailjs from '@emailjs/browser';
 import './Contact.css';
 
 const Contact = () => {
+  const formRef = useRef();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -13,6 +15,13 @@ const Contact = () => {
   });
 
   const [formStatus, setFormStatus] = useState({ type: '', message: '' });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  // Initialize EmailJS with your public key
+  useEffect(() => {
+    emailjs.init('Ax-DTo9Cnp8WdColV');
+    console.log('✅ EmailJS initialized');
+  }, []);
 
   const contactDetails = [
     { icon: <FaEnvelope />, title: 'Email', value: 'vishal250820@gmail.com' },
@@ -28,47 +37,64 @@ const Contact = () => {
   ];
 
   const handleChange = (e) => {
+    const { name, value } = e.target;
+    // Map EmailJS template field names to state field names
+    const fieldMap = {
+      'from_name': 'name',
+      'from_email': 'email',
+      'subject': 'subject',
+      'message': 'message'
+    };
+    const stateField = fieldMap[name] || name;
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [stateField]: value
     });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsSubmitting(true);
+
+    console.log('📧 Submitting form...');
 
     try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(formData)
+      // Use sendForm - it automatically reads form fields by 'name' attribute
+      const result = await emailjs.sendForm(
+        'service_x95o5qw',    // Service ID
+        'template_os5sr87',   // Template ID (fixed: 'o' not '0')
+        formRef.current       // Form reference
+      );
+
+      console.log('✅ Email sent successfully:', result);
+
+      setFormStatus({
+        type: 'success',
+        message: `Thank you ${formData.name}! Your message has been sent successfully. I'll get back to you soon!`
+      });
+      setFormData({ name: '', email: '', subject: '', message: '' });
+
+    } catch (error) {
+      console.error('❌ Email sending failed:', error);
+      console.error('Error details:', {
+        text: error.text,
+        status: error.status,
+        message: error.message
       });
 
-      const data = await response.json();
-
-      if (response.ok) {
-        setFormStatus({
-          type: 'success',
-          message: `Thank you ${formData.name}! Your message has been sent successfully. I'll get back to you soon!`
-        });
-        setFormData({ name: '', email: '', subject: '', message: '' });
-      } else {
-        throw new Error(data.message || 'Failed to send message');
-      }
-    } catch (error) {
-      console.error('Contact form error:', error);
       setFormStatus({
         type: 'error',
-        message: 'Unable to connect to server. Please ensure the backend is running on port 5000.'
+        message: `Failed to send email: ${error.text || error.message}. Please try again or email me directly at vishal250820@gmail.com`
       });
+    } finally {
+      setIsSubmitting(false);
     }
 
     setTimeout(() => {
       setFormStatus({ type: '', message: '' });
     }, 8000);
   };
+
 
   return (
     <section id="contact" className="contact section">
@@ -124,6 +150,7 @@ const Contact = () => {
           </motion.div>
 
           <motion.form
+            ref={formRef}
             className="contact-form"
             onSubmit={handleSubmit}
             initial={{ opacity: 0, x: 50 }}
@@ -134,7 +161,7 @@ const Contact = () => {
             <div className="form-group">
               <input
                 type="text"
-                name="name"
+                name="from_name"
                 value={formData.name}
                 onChange={handleChange}
                 placeholder="Your Name"
@@ -144,12 +171,14 @@ const Contact = () => {
             <div className="form-group">
               <input
                 type="email"
-                name="email"
+                name="from_email"
                 value={formData.email}
                 onChange={handleChange}
                 placeholder="Your Email"
                 required
               />
+              {/* Hidden field for Reply To */}
+              <input type="hidden" name="email" value={formData.email} />
             </div>
             <div className="form-group">
               <input
@@ -171,8 +200,8 @@ const Contact = () => {
                 required
               />
             </div>
-            <button type="submit" className="btn btn-primary">
-              <FaPaperPlane /> Send Message
+            <button type="submit" className="btn btn-primary" disabled={isSubmitting}>
+              <FaPaperPlane /> {isSubmitting ? 'Sending...' : 'Send Message'}
             </button>
             {formStatus.message && (
               <div className={`form-status ${formStatus.type}`}>
